@@ -6,16 +6,18 @@ import Movies from "./Movies"
 class App extends Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      movies: movieData.movies
+    }
   }
 
   render() {
-    console.log(movieData)
+    console.log(this.state.movies)
     return (
       <div className="App">
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
-          <Movies />
+          <Movies movies={this.state.movies}/>
         </header>
       </div>
     )
