@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.movies)
+    // console.log(this.state.movies)
     return (
       <div className="App">
         <header className="App-header">
