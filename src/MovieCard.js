@@ -4,7 +4,7 @@ const MovieCard = ({ src, alt, id }) => {
 
   return (
     <div className="movie-card">
-        <img src ={src} alt={alt} id={id}/>
+        <img className="movie-poster" src ={src} alt={alt} id={id}/>
     </div>
   )
 }
