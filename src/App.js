@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import './App.css'
+import movieData from "./movieData"
+import Movies from "./Movies"
 
 class App extends Component {
   constructor() {
@@ -8,11 +10,13 @@ class App extends Component {
   }
 
   render() {
+    console.log(movieData)
     return (
       <div className="App">
-      <header className="App-header">
-        Hello world
-      </header>
+        <header className="App-header">
+          <h1>Rancid Tomatillos</h1>
+          <Movies />
+        </header>
       </div>
     )
   }
