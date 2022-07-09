@@ -4,7 +4,12 @@ import "./MovieDetail.css"
 const MovieDetail = ({ details }) => {
   return (
     <div className="detail-card">
-        <h2>{details.title}</h2>
+        <div className="card-header">
+          <h2>{details.title}</h2>
+          <span className="material-symbols-outlined" style={{fontSize: 55}}>
+cancel
+</span>
+        </div>
         <img className="backdrop" src={details.backdrop_path}/>
       <div className="copy-wrapper">
         <div className="copy">

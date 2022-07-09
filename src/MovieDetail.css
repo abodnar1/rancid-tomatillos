@@ -5,6 +5,14 @@
  align-items: center;
 }
 
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: cornflowerblue;
+    width: 800px;
+}
+
 .backdrop {
     height: 500px;
     width: 800px;
