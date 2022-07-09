@@ -11,13 +11,16 @@ class App extends Component {
     }
   }
 
+  displayMovieDetails = () => {
+    console.log('Display')
+  }
+
   render() {
-    // console.log(this.state.movies)
     return (
       <div className="App">
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
-          <Movies movies={this.state.movies}/>
+          <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>
         </header>
       </div>
     )
