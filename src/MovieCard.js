@@ -7,7 +7,7 @@ const MovieCard = ({ posterPath, id, backdropPath, title, avgRating, releaseDate
   //   event.preventDefault()
   //   console.log('HI')
   //   return(
-  //     // < MovieDetail 
+  //     // < MovieDetail
   //     //   posterPath={posterPath}
   //     //   id={id}
   //     //   backdropPath={backdropPath}
@@ -20,7 +20,7 @@ const MovieCard = ({ posterPath, id, backdropPath, title, avgRating, releaseDate
 
   return (
     <div className="movie-card">
-        <img onClick={displayMovieDetails} className="movie-poster" src={posterPath} alt={title} id={id}/>
+        <img onClick={() => displayMovieDetails(id)} className="movie-poster" src={posterPath} alt={title} id={id}/>
     </div>
   )
 }

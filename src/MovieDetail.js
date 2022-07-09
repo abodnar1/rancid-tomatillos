@@ -1,10 +1,9 @@
 import React from 'react'
 
 const MovieDetail = ({ posterPath, id, backdropPath, title, avgRating, releaseDate }) => {
-
-
-return (
-   console.log(MovieDetail)
-)
+  return (
+    <div>Am I working?</div>
+  )
 }
+
 export default MovieDetail
