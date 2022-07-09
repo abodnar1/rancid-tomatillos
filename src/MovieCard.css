@@ -1,0 +1,13 @@
+.movie-poster {
+    height: 330px;
+  }
+  
+.movie-poster:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  .movie-card {
+    margin: 0;
+  }

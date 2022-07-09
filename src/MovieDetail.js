@@ -1,8 +1,19 @@
 import React from 'react'
 
-const MovieDetail = ({ posterPath, id, backdropPath, title, avgRating, releaseDate }) => {
+const MovieDetail = ({ details }) => {
   return (
-    <div>Am I working?</div>
+    <div>
+      <div>
+        <h2>{details.title}</h2>
+        <img src={details.backdrop_path}/>
+      </div>
+      <div>
+        <div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
   )
 }
 

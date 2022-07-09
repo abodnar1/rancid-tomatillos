@@ -25,9 +25,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
-          {this.state.clickedMovie ? <MovieDetail /> : <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/> }
-
         </header>
+          {this.state.clickedMovie ? <MovieDetail details={this.state.clickedMovie} /> : <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/> }
       </div>
     )
   }
