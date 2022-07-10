@@ -8,15 +8,55 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       clickedMovie: null,
+      isLoading: false,
+      error: '',
     }
   }
 
-  displayMovieDetails = (id) => {
-    const singleMovie = this.state.movies.find(movie => movie.id === id)
+  componentDidMount = () => {
+    this.setState({isLoading: true})
 
-    this.setState({clickedMovie: singleMovie})
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          console.log("Error")
+        }
+      })
+      .then(data => {
+        this.setState({
+          movies: data.movies,
+          isLoading: false,
+        })
+      })
+      .catch(error => {
+        this.setState({error: error.message})
+        console.log("error")
+      })
+  }
+
+  displayMovieDetails = (id) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          console.log("Error")
+        }
+      })
+      .then(data => {
+        this.setState({
+          clickedMovie: data.movie,
+          isLoading: false,
+        })
+      })
+      .catch(error => {
+        this.setState({error: error.message})
+        console.log("error")
+      })
   }
 
   closeMovieDetails = () => {
@@ -29,6 +69,8 @@ class App extends Component {
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
         </header>
+          {this.state.isLoading && <p>Loading...</p>}
+          {this.state.error && <h2>{this.state.error}</h2>}
           {this.state.clickedMovie ? 
           <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> : 
           <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
