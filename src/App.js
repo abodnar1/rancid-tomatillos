@@ -39,9 +39,24 @@ class App extends Component {
   }
 
   displayMovieDetails = (id) => {
-    const singleMovie = this.state.movies.find(movie => movie.id === id)
-
-    this.setState({clickedMovie: singleMovie})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          console.log("Error")
+        }
+      })
+      .then(data => {
+        this.setState({
+          clickedMovie: data.movie,
+          isLoading: false,
+        })
+      })
+      .catch(error => {
+        this.setState({error: error.message})
+        console.log("error")
+      })
   }
 
   closeMovieDetails = () => {
