@@ -29,3 +29,5 @@ _Delete options that are not relevant_
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] My changes generate no new bugs
 - [ ] I have tagged project partners for review & it has been reviewed 
+
+<h2>Does this PR close any issues?</h2>
