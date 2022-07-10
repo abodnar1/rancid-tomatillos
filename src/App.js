@@ -8,9 +8,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: movieData.movies,
+      movies: [],
       clickedMovie: null,
     }
+  }
+
+  componentDidMount = () => {
+    console.log("didmount")
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+      .then(res => res.json())
+      .then(data => {
+        this.setState({movies: data.movies})
+        console.log(this.state)
+      })
   }
 
   displayMovieDetails = (id) => {
