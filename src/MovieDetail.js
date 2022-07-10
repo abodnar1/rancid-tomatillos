@@ -13,7 +13,7 @@ const MovieDetail = ({ details , closeMovieDetails }) => {
         <div className="copy">
           <p>"{details.tagline}"</p>
           <p>{details.overview}</p>
-          <p>Genres</p>
+          <p>Genres: {details.genres.join(', ')}</p>
           <p>{details.runtime} min.</p>
         </div>
         <div className="copy">
