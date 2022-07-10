@@ -19,14 +19,19 @@ class App extends Component {
     this.setState({clickedMovie: singleMovie})
   }
 
+  closeMovieDetails = () => {
+    this.setState({clickedMovie: null})
+  }
+
   render() {
-    console.log("ClickedMovie:", this.state.clickedMovie)
     return (
       <div className="App">
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
         </header>
-          {this.state.clickedMovie ? <MovieDetail details={this.state.clickedMovie} /> : <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/> }
+          {this.state.clickedMovie ? 
+          <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> : 
+          <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
       </div>
     )
   }
