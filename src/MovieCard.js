@@ -1,10 +1,13 @@
 import React from "react"
+import './MovieCard.css'
+// import MovieDetail from './MovieDetail'
 
-const MovieCard = ({ src, alt, id }) => {
+const MovieCard = ({ posterPath, id, backdropPath, title, avgRating, releaseDate, displayMovieDetails }) => {
+
 
   return (
     <div className="movie-card">
-        <img className="movie-poster" src ={src} alt={alt} id={id}/>
+        <img onClick={() => displayMovieDetails(id)} className="movie-poster" src={posterPath} alt={title} id={id} />
     </div>
   )
 }
