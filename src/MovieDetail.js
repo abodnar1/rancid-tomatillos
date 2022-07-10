@@ -11,14 +11,14 @@ const MovieDetail = ({ details , closeMovieDetails }) => {
         <img className="backdrop" src={details.backdrop_path}/>
       <div className="copy-wrapper">
         <div className="copy">
-          <p>Tagline</p>
-          <p>Overview</p>
+          <p>"{details.tagline}"</p>
+          <p>{details.overview}</p>
           <p>Genres</p>
-          <p>Runtime</p>
+          <p>{details.runtime} min.</p>
         </div>
         <div className="copy">
-        <p>Budget/Revenue</p>
-        <p>{details.average_rating}</p>
+        <p>Budget: ${details.budget.toFixed(2)} / Revenue: ${details.revenue.toFixed(2)}</p>
+        <p>Average rating {details.average_rating.toFixed(1)}</p>
         <p>{details.release_date}</p>
         </div>
       </div>
