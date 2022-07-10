@@ -10,16 +10,20 @@ class App extends Component {
     this.state = {
       movies: [],
       clickedMovie: null,
+      isLoading: false,
     }
   }
 
   componentDidMount = () => {
-    console.log("didmount")
+    this.setState({isLoading: true})
+
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then(res => res.json())
       .then(data => {
-        this.setState({movies: data.movies})
-        console.log(this.state)
+        this.setState({
+          movies: data.movies,
+          isLoading: false,
+        })
       })
   }
 
@@ -39,6 +43,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Rancid Tomatillos</h1>
         </header>
+          {this.state.isLoading && <p>Loading...</p>}
           {this.state.clickedMovie ? 
           <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> : 
           <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
