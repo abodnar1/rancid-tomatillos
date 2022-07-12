@@ -2,6 +2,8 @@ import React from 'react'
 import "./MovieDetail.css"
 
 const MovieDetail = ({ details , closeMovieDetails }) => {
+  console.log("details", details)
+  console.log("hello")
   return (
     <div className="detail-card">
         <div className="card-header">

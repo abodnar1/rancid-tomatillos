@@ -5,6 +5,7 @@ import Movies from "../Movies/Movies"
 import MovieDetail from "../MovieDetail/MovieDetail"
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import { Route } from "react-router-dom"
 
 class App extends Component {
   constructor() {
@@ -69,15 +70,23 @@ class App extends Component {
     return (
       <div className="App">
           <Header />
-          {this.state.isLoading && <p className="loading">Loading...</p>}
-          {this.state.error && <h2>{this.state.error}</h2>}
-          {this.state.clickedMovie ?
-          <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> :
-          <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
+          <Route
+            exact path="/"
+            render={() => <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>}
+            />
+          <Route
+            exact path="/:id"
+            render={() => <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails}/>}
+          />
           <Footer />
       </div>
     )
   }
 }
 
+// {this.state.isLoading && <p className="loading">Loading...</p>}
+// {this.state.error && <h2>{this.state.error}</h2>}
+// {this.state.clickedMovie ?
+  // <MovieDetail details={this.state.clickedMovie}  /> :
+  // <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
 export default App;
