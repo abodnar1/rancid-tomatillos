@@ -1,9 +1,13 @@
+body {
+  margin-bottom: 20px;
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 25vh;
   display: flex;
   flex-direction: column;
@@ -12,7 +16,6 @@
   font-family: 'Vibur';
   font-size: 4rem;
   font-weight: 400;
-  /* font-size: calc(10px + 2vmin); */
 }
 
 .App-header h1 {
