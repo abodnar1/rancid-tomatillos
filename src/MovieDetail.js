@@ -8,7 +8,7 @@ const MovieDetail = ({ details , closeMovieDetails }) => {
           <h2>{details.title}</h2>
           <span onClick={()=> closeMovieDetails()} className="material-symbols-outlined" style={{fontSize: 55}}>cancel</span>
         </div>
-        <img className="backdrop" src={details.backdrop_path}/>
+        <img className="backdrop" src={details.backdrop_path} alt="image from movie"/>
       <div className="copy-wrapper">
         <div className="copy">
           <p>"{details.tagline}"</p>
@@ -18,7 +18,7 @@ const MovieDetail = ({ details , closeMovieDetails }) => {
         </div>
         <div className="copy">
         <p>Budget: ${details.budget.toFixed(2)} / Revenue: ${details.revenue.toFixed(2)}</p>
-        <p>Average rating {details.average_rating.toFixed(1)}</p>
+        <p>Average rating {details.average_rating.toFixed(1)}/10</p>
         <p>{details.release_date}</p>
         </div>
       </div>
