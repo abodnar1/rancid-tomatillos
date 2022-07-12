@@ -69,7 +69,7 @@ class App extends Component {
         <header className="App-header">
           <h1>R<span>an</span>cid Tom<span>at</span>illos</h1>
         </header>
-          {this.state.isLoading && <p>Loading...</p>}
+          {this.state.isLoading && <p className="loading">Loading...</p>}
           {this.state.error && <h2>{this.state.error}</h2>}
           {this.state.clickedMovie ?
           <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> :
