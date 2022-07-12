@@ -67,12 +67,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Rancid Tomatillos</h1>
+          <h1>R<span>an</span>cid Tom<span>at</span>illos</h1>
         </header>
-          {this.state.isLoading && <p>Loading...</p>}
+          {this.state.isLoading && <p className="loading">Loading...</p>}
           {this.state.error && <h2>{this.state.error}</h2>}
-          {this.state.clickedMovie ? 
-          <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> : 
+          {this.state.clickedMovie ?
+          <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> :
           <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
       </div>
     )

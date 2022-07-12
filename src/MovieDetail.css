@@ -1,35 +1,43 @@
+
 .detail-card {
-    background-color: #282c34;
  display: flex;
  flex-direction: column;
  align-items: center;
+ color: #FFFFFF;
 }
 
 .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: cornflowerblue;
-    width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #526340;
+  width: 800px;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+.materials-synmbols-outlined {
+  margin-right: 20px;
 }
 
 .backdrop {
-    height: 500px;
-    width: 800px;
+  height: 500px;
+  width: 800px;
 }
 
 .copy-wrapper {
-    margin: -50;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-    width: 800px;
-    background-color: cornflowerblue;
+  margin: -50;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  width: 800px;
+  background-color: #526340;
 }
 
 .copy {
-    height: 200px;
-    width: 400px;
-    border: 2px solid;
+  height: auto;
+  width: 400px;
 }
