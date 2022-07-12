@@ -2,11 +2,11 @@ import React from "react"
 import './MovieCard.css'
 import { Link } from "react-router-dom"
 
-const MovieCard = ({ posterPath, id, backdropPath, title, avgRating, releaseDate, displayMovieDetails }) => {
+const MovieCard = ({ id, title, posterPath }) => {
 
   return (
     <Link to={`/${id}`} className="movie-card">
-        <img onClick={() => console.log("hiiiiii")} className="movie-poster" src={posterPath} alt={title} id={id} />
+      <img className="movie-poster" src={posterPath} alt={title} id={id} />
     </Link>
   )
 }

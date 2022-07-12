@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+
     this.setState({isLoading: true})
 
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -27,6 +28,7 @@ class App extends Component {
           return res.json()
         } else {
           console.log("Error")
+          // need to do something other than just console.log (window.alert?)
         }
       })
       .then(data => {
@@ -41,26 +43,26 @@ class App extends Component {
       })
   }
 
-  displayMovieDetails = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        } else {
-          console.log("Error")
-        }
-      })
-      .then(data => {
-        this.setState({
-          clickedMovie: data.movie,
-          isLoading: false,
-        })
-      })
-      .catch(error => {
-        this.setState({error: error.message})
-        console.log("error")
-      })
-  }
+  // displayMovieDetails = (id) => {
+  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+  //     .then(res => {
+  //       if (res.ok) {
+  //         return res.json()
+  //       } else {
+  //         console.log("Error")
+  //       }
+  //     })
+  //     .then(data => {
+  //       this.setState({
+  //         clickedMovie: data.movie,
+  //         isLoading: false,
+  //       })
+  //     })
+  //     .catch(error => {
+  //       this.setState({error: error.message})
+  //       console.log("error")
+  //     })
+  // }
 
   closeMovieDetails = () => {
     this.setState({clickedMovie: null})
@@ -69,24 +71,35 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Header />
-          <Route
-            exact path="/"
-            render={() => <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails}/>}
-            />
-          <Route
-            exact path="/:id"
-            render={() => <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails}/>}
+        <Header />
+        {this.state.isLoading && <p className="loading">Loading...</p>}
+        {this.state.error && <h2>{this.state.error}</h2>}
+        <Route
+          exact path="/"
+          render={() => <Movies movies={this.state.movies}/>}
           />
-          <Footer />
+        <Route
+          exact path="/:id"
+          render={({ match }) => {
+            return <MovieDetail id={match.params.id}/>
+            console.log(match)
+          }}
+        />
+        <Footer />
       </div>
     )
   }
 }
+// const movieToDisplay = displayMovieDetails(match.params.id)
+// return <MovieDetail {...movieToDisplay} />
 
-// {this.state.isLoading && <p className="loading">Loading...</p>}
-// {this.state.error && <h2>{this.state.error}</h2>}
+// <Route
+//   exact path="/:id"
+//   render={() => <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails}/>}
+// />
+
 // {this.state.clickedMovie ?
-  // <MovieDetail details={this.state.clickedMovie}  /> :
-  // <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
+//   <MovieDetail details={this.state.clickedMovie}  /> :
+//   <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
+
 export default App;
