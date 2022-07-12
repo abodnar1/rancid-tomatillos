@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import './App.css'
-import movieData from "./movieData"
-import Movies from "./Movies"
-import MovieDetail from "./MovieDetail"
+import movieData from "../movieData"
+import Movies from "../Movies/Movies"
+import MovieDetail from "../MovieDetail/MovieDetail"
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 class App extends Component {
   constructor() {
@@ -66,14 +68,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>R<span>an</span>cid Tom<span>at</span>illos</h1>
-        </header>
+          <Header />
           {this.state.isLoading && <p className="loading">Loading...</p>}
           {this.state.error && <h2>{this.state.error}</h2>}
           {this.state.clickedMovie ?
           <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails} /> :
           <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
+          <Footer />
       </div>
     )
   }

@@ -1,18 +1,4 @@
-body {
-  margin-bottom: 20px;
-  background-color: #282c34;
-}
-
-.App {
-  text-align: center;
-}
-
-.loading {
-  font-size: 24px;
-  color: white;
-}
-
-.App-header {
+.header {
   min-height: 25vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +9,7 @@ body {
   font-weight: 400;
 }
 
-.App-header h1 {
+.header h1 {
   color: #fff;
   text-shadow:
     0 -40px 100px,
@@ -34,11 +20,11 @@ body {
     0 10px 3px #000;
 }
 
-.App-header h1 span {
+.header h1 span {
   animation: blink linear infinite 2s;
 }
 
-.App-header h1 span:nth-of-type(2) {
+.header h1 span:nth-of-type(2) {
   animation: blink linear infinite 3s;
 }
 
