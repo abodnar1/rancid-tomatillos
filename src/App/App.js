@@ -26,8 +26,8 @@ class App extends Component {
         if (res.ok) {
           return res.json()
         } else {
+          this.setState({error: "There was an error, please try again."})
           console.log("Error")
-          // need to do something other than just console.log (window.alert?)
         }
       })
       .then(data => {

@@ -4,13 +4,26 @@ describe("Rancid Tomatillos", () => {
     cy.visit('http://localhost:3000/')
   });
 
-  it('The user should be able to visit http://localhost:3000 and see all movie posters', () => {
-    cy.contains("h1", "Rancid Tomatillos");
+  it('The user should be able to visit http://localhost:3000 and see a title', () => {
+    cy.contains("h1", "Rancid Tomatillos")
+      .should("be.visible")
   });
+
+  it('The user should be able to visit http://localhost:3000 and see all movies', () => {
+    cy.get("section")
+      .should("have.class", "movie-container")
+  });
+
+  // it('As a user, I should receive an error message if there are no movies to display', () => {
+  //   cy.get("App")
+  //     .contains("")
+  // })
+
 });
 
+
 // 1)
-// A) As a user, I should be able to visit http://localhost:3000 and see a title & movies displayed. (happy)
+// A) As a user, I should be able to visit http://localhost:3000 and see a title & movies displayed. (happy) X
 // B) As a user, I should receive an error message if there are no movies to display (Sad)
 
 // 2)

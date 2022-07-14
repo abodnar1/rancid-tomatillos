@@ -8,6 +8,7 @@ class MovieDetail extends Component {
     this.state = {
       isLoading: true,
       movieToDisplay: null,
+      error: '',
     }
   }
 
@@ -17,8 +18,8 @@ class MovieDetail extends Component {
         if (res.ok) {
           return res.json()
         } else {
+          this.setState({error: "There was an error, please try again."})
           console.log("Error")
-          // need error handling for UI/UX
         }
       })
       .then(data => {
@@ -31,13 +32,13 @@ class MovieDetail extends Component {
       .catch(error => {
         this.setState({error: error.message})
         console.log("error")
-        // need error handling for UI/UX
       })
   }
 
   render() {
     return (
       <>
+      {this.state.error && <h2>{this.state.error}</h2>}
       {!this.state.isLoading &&
       <div className="detail-card">
         <div className="card-header">
