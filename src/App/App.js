@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import './App.css'
-import movieData from "../movieData"
+// import movieData from "../movieData"
 import Movies from "../Movies/Movies"
 import MovieDetail from "../MovieDetail/MovieDetail"
 import Header from '../Header/Header'

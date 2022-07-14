@@ -46,7 +46,7 @@ class MovieDetail extends Component {
             <span className="material-symbols-outlined">cancel</span>
           </Link>
         </div>
-        <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="image from movie"/>
+        <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="still shot from movie"/>
         <div className="copy-wrapper">
           <div className="copy">
             <p>"{this.state.movieToDisplay.tagline}"</p>
