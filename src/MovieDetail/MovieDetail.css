@@ -15,11 +15,15 @@
 }
 
 h2 {
-  margin-left: 20px;
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.materials-synmbols-outlined {
-  margin-right: 20px;
+.material-symbols-outlined {
+  margin-right: 10px;
+  color: white;
+  font-size: 55px;
 }
 
 .backdrop {
@@ -40,4 +44,5 @@ h2 {
 .copy {
   height: auto;
   width: 400px;
+  padding: 10px;
 }

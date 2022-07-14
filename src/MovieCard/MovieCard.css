@@ -1,4 +1,4 @@
-.movie-poster {
+/* .movie-poster {
     height: 330px;
   }
 
@@ -17,4 +17,24 @@
 
   .movie-card {
     margin: 0;
+  } */
+
+.movie-poster {
+  margin: 0;
+  height: 330px;
+  transition: transform 400ms;
   }
+
+.movie-poster:hover{
+  transform: scale(1.1);
+  border: 2px solid #fff;
+  color: #90EE90;
+  box-shadow:
+  0 -40px 100px,
+  0 0 2px,
+  0 0 1em #90EE90,
+  0 0 0.5em #90EE90,
+  0 0 0.1em #90EE90,
+  0 10px 3px #000;
+  cursor: pointer;
+}
