@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./MovieDetail.css"
+import { Link } from 'react-router-dom'
 
 class MovieDetail extends Component {
   constructor(props) {
@@ -35,11 +36,13 @@ class MovieDetail extends Component {
   render() {
     return (
       <>
-      {!this.state.isLoading &&   
+      {!this.state.isLoading &&
       <div className="detail-card">
         <div className="card-header">
           <h2>{this.state.movieToDisplay.title}</h2>
-          <span onClick={()=> console.log("hi")} className="material-symbols-outlined" style={{fontSize: 55}}>cancel</span>
+          <Link to={"/"}>
+            <span className="material-symbols-outlined">cancel</span>
+          </Link>
         </div>
         <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="image from movie"/>
         <div className="copy-wrapper">

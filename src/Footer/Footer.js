@@ -6,6 +6,7 @@ const Footer = () => {
   return (
     <div>
       <ul>
+        Contributors:
         <li>Amber Bodnar</li>
         <li>Grant Beard</li>
         <li>Neil Linton</li>
@@ -13,6 +14,5 @@ const Footer = () => {
     </div>
   )
 }
-
 
 export default Footer
