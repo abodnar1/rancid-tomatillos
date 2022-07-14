@@ -18,6 +18,7 @@ class MovieDetail extends Component {
           return res.json()
         } else {
           console.log("Error")
+          // need error handling for UI/UX
         }
       })
       .then(data => {
@@ -30,6 +31,7 @@ class MovieDetail extends Component {
       .catch(error => {
         this.setState({error: error.message})
         console.log("error")
+        // need error handling for UI/UX
       })
   }
 
