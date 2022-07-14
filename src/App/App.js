@@ -12,7 +12,6 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      clickedMovie: null,
       isLoading: false,
       error: '',
     }
@@ -43,31 +42,6 @@ class App extends Component {
       })
   }
 
-  // displayMovieDetails = (id) => {
-  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-  //     .then(res => {
-  //       if (res.ok) {
-  //         return res.json()
-  //       } else {
-  //         console.log("Error")
-  //       }
-  //     })
-  //     .then(data => {
-  //       this.setState({
-  //         clickedMovie: data.movie,
-  //         isLoading: false,
-  //       })
-  //     })
-  //     .catch(error => {
-  //       this.setState({error: error.message})
-  //       console.log("error")
-  //     })
-  // }
-
-  closeMovieDetails = () => {
-    this.setState({clickedMovie: null})
-  }
-
   render() {
     return (
       <div className="App">
@@ -82,7 +56,6 @@ class App extends Component {
           exact path="/:id"
           render={({ match }) => {
             return <MovieDetail id={match.params.id}/>
-            console.log(match)
           }}
         />
         <Footer />
@@ -90,16 +63,5 @@ class App extends Component {
     )
   }
 }
-// const movieToDisplay = displayMovieDetails(match.params.id)
-// return <MovieDetail {...movieToDisplay} />
-
-// <Route
-//   exact path="/:id"
-//   render={() => <MovieDetail details={this.state.clickedMovie} closeMovieDetails={this.closeMovieDetails}/>}
-// />
-
-// {this.state.clickedMovie ?
-//   <MovieDetail details={this.state.clickedMovie}  /> :
-//   <Movies movies={this.state.movies} displayMovieDetails={this.displayMovieDetails} /> }
 
 export default App;
