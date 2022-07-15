@@ -18,10 +18,8 @@ describe("Rancid Tomatillos", () => {
     cy.get(".movie-poster").first().click()
     cy.url().should('eq', 'http://localhost:3000/694919')
   });
-
-
+  
 });
-
 
 // Notes from Artan:
 // intercept always goes first, because we're telling it not to go to the API we have setup.
@@ -38,9 +36,3 @@ describe("Rancid Tomatillos", () => {
 // cy.get('.category__header').eq(1).contains('Best Director') (eq is checking index 1)
 // check for children cy.get.children
 // cy.get('.nominee__card').eq(3).should('have.css', 'border', '4px solid rgb(255, 255, 0)')
-
-
-
-// 2)
-// A) As a user, I should be able to click on a movie card and be directed to a new URL (MovieDetail ID). (happy)
-// B) As a user, I should receive an error message. (Sad)
