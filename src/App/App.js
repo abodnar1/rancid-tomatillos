@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import './App.css'
-import movieData from "../movieData"
+// import movieData from "../movieData"
 import Movies from "../Movies/Movies"
 import MovieDetail from "../MovieDetail/MovieDetail"
 import Header from '../Header/Header'
@@ -26,8 +26,8 @@ class App extends Component {
         if (res.ok) {
           return res.json()
         } else {
+          this.setState({error: "There was an error, please try again."})
           console.log("Error")
-          // need to do something other than just console.log (window.alert?)
         }
       })
       .then(data => {

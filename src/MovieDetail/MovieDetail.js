@@ -8,6 +8,7 @@ class MovieDetail extends Component {
     this.state = {
       isLoading: true,
       movieToDisplay: null,
+      error: '',
     }
   }
 
@@ -17,8 +18,8 @@ class MovieDetail extends Component {
         if (res.ok) {
           return res.json()
         } else {
+          this.setState({error: "There was an error, please try again."})
           console.log("Error")
-          // need error handling for UI/UX
         }
       })
       .then(data => {
@@ -31,13 +32,13 @@ class MovieDetail extends Component {
       .catch(error => {
         this.setState({error: error.message})
         console.log("error")
-        // need error handling for UI/UX
       })
   }
 
   render() {
     return (
       <>
+      {this.state.error && <h2>{this.state.error}</h2>}
       {!this.state.isLoading &&
       <div className="detail-card">
         <div className="card-header">
@@ -46,18 +47,18 @@ class MovieDetail extends Component {
             <span className="material-symbols-outlined">cancel</span>
           </Link>
         </div>
-        <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="image from movie"/>
+        <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="still shot from movie"/>
         <div className="copy-wrapper">
           <div className="copy">
-            <p>"{this.state.movieToDisplay.tagline}"</p>
-            <p>{this.state.movieToDisplay.overview}</p>
-            <p>Genres: {this.state.movieToDisplay.genres.join(', ')}</p>
-            <p>{this.state.movieToDisplay.runtime} min.</p>
+            <p className="tagline">"{this.state.movieToDisplay.tagline}"</p>
+            <p className="overview">{this.state.movieToDisplay.overview}</p>
+            <p className="genres">Genres: {this.state.movieToDisplay.genres.join(', ')}</p>
+            <p className="runtime">{this.state.movieToDisplay.runtime} min.</p>
           </div>
           <div className="copy">
-            <p>Budget: ${this.state.movieToDisplay.budget.toFixed(2)} / Revenue: ${this.state.movieToDisplay.revenue.toFixed(2)}</p>
-            <p>Average rating {this.state.movieToDisplay.average_rating.toFixed(1)}/10</p>
-            <p>{this.state.movieToDisplay.release_date}</p>
+            <p className="budget">Budget: ${this.state.movieToDisplay.budget.toFixed(2)} / Revenue: ${this.state.movieToDisplay.revenue.toFixed(2)}</p>
+            <p className="average-rating">Average rating {this.state.movieToDisplay.average_rating.toFixed(1)}/10</p>
+            <p className="release-date">{this.state.movieToDisplay.release_date}</p>
           </div>
         </div>
       </div>
