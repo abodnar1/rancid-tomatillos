@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./MovieDetail.css"
 import { Link } from 'react-router-dom'
+import ReactPlayer from 'react-player'
 
 class MovieDetail extends Component {
   constructor(props) {
@@ -8,34 +9,67 @@ class MovieDetail extends Component {
     this.state = {
       isLoading: true,
       movieToDisplay: null,
+      trailerToDisplay: null,
       error: '',
     }
   }
 
   componentDidMount = () => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
-      .then(res => {
-        if (res.ok) {
-          return res.json()
+      Promise.all([
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`), 
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
+      ])
+      .then(response => {
+        console.log(response[0].ok, response[1].ok)
+        if (response[0].ok && response[1].ok) {
+         return Promise.all(response.map(res => res.json()))
         } else {
           this.setState({error: "There was an error, please try again."})
           console.log("Error")
         }
       })
       .then(data => {
-        this.setState({
-          movieToDisplay: data.movie,
+        // console.log("here")
+        // console.log(data[0].movie.title)
+        // console.log(data[1].videos)
+        return this.setState({
+          movieToDisplay: data[0].movie,
+          trailerToDisplay: null,
           isLoading: false,
         })
-      })
 
+      }
+      )
       .catch(error => {
         this.setState({error: error.message})
         console.log("error")
       })
   }
 
+  // componentDidMount = () => {
+  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
+  //     .then(res => {
+  //       if (res.ok) {
+  //         return res.json()
+  //       } else {
+  //         this.setState({error: "There was an error, please try again."})
+  //         console.log("Error")
+  //       }
+  //     })
+  //     .then(data => {
+  //       this.setState({
+  //         movieToDisplay: data.movie,
+  //         isLoading: false,
+  //       })
+  //     })
+  //     .catch(error => {
+  //       this.setState({error: error.message})
+  //       console.log("error")
+  //     })
+  // }
+
   render() {
+    console.log(this.state.movieToDisplay)
     return (
       <>
       {this.state.error && <h2>{this.state.error}</h2>}
@@ -48,6 +82,7 @@ class MovieDetail extends Component {
           </Link>
         </div>
         <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="still shot from movie"/>
+        {/* <ReactPlayer url={`https://www.youtube.com/watch?v=${this.trailerToDisplay.videos[0].key}-U`} /> */}
         <div className="copy-wrapper">
           <div className="copy">
             <p className="tagline">"{this.state.movieToDisplay.tagline}"</p>
