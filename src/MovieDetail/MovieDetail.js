@@ -16,7 +16,7 @@ class MovieDetail extends Component {
 
   componentDidMount = () => {
       Promise.all([
-        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`), 
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`),
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
       ])
       .then(response => {
@@ -28,6 +28,7 @@ class MovieDetail extends Component {
         }
       })
       .then(data => {
+        console.log(data[1].videos)
         return this.setState({
           movieToDisplay: data[0].movie,
           trailerToDisplay: data[1].videos.find(video => video.type === 'Trailer'),
@@ -53,8 +54,7 @@ class MovieDetail extends Component {
               <span className="material-symbols-outlined">cancel</span>
             </Link>
           </div>
-          <img className="backdrop" src={this.state.movieToDisplay.backdrop_path} alt="still shot from movie"/>
-          {this.state.movieToDisplay && <ReactPlayer url={`https://www.youtube.com/watch?v=${this.trailerToDisplay.videos[0].key}-U`} />}
+          <ReactPlayer width="800px" height="500px" url={`https://www.youtube.com/watch?v=${this.state.trailerToDisplay.key}-U`} />
           <div className="copy-wrapper">
             <div className="copy">
               <p className="tagline">"{this.state.movieToDisplay.tagline}"</p>
