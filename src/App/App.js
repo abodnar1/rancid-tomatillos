@@ -1,10 +1,9 @@
 import React, { Component } from "react"
-import './App.css'
-// import movieData from "../movieData"
+import "./App.css"
 import Movies from "../Movies/Movies"
 import MovieDetail from "../MovieDetail/MovieDetail"
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 import { Route } from "react-router-dom"
 
 class App extends Component {
@@ -13,7 +12,7 @@ class App extends Component {
     this.state = {
       movies: [],
       isLoading: false,
-      error: '',
+      error: "",
     }
   }
 
@@ -51,12 +50,10 @@ class App extends Component {
         <Route
           exact path="/"
           render={() => <Movies movies={this.state.movies}/>}
-          />
+        />
         <Route
           exact path="/:id"
-          render={({ match }) => {
-            return <MovieDetail id={match.params.id}/>
-          }}
+          render={({ match }) => <MovieDetail id={match.params.id}/>}
         />
         <Footer />
       </div>
@@ -64,4 +61,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
