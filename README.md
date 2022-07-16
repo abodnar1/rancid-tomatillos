@@ -13,7 +13,7 @@
 
 
 ## Project Overview
-[TYPE HERE]
+This application allows a user to view a movie library, click on an individual movie poster to see details of that movie, and watch a trailer. Goal was to implement React framework and utilizing React Router along with End-to-End testing using Cypress.
 
 [VISUALS GO HERE]
 ![](name-of-giphy.gif)
@@ -29,7 +29,6 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
 
 
 ## Technologies and Tools
-[delete all that don't apply/add new]
 * JavaScript
 * React
 * React Router
@@ -37,20 +36,11 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
 * HTML
 * CSS
 * Cypress Testing
-* Mocha/Chai Testing
 * npm
 * Node.js
-* Express
-* Webpack
-* Atom 
-* VS Code
-* Agile
-* Git
-* GitHub
+* ReactPlayer
 * GitHub Issues
 * GitHub Projects
-* MacOS Terminal
-* Google Chrome Dev-Tools
 
 
 ## Deployed Page
@@ -59,21 +49,28 @@ You can access this project through the deployed page [here]().
 
 ## Project Reflections
 #### Wins
-#### Challenges
+* Gained more confidence in using React
+* Learned new technologies through Router and Cypress testing
+* Accomplished learning goals defined by the project specs
+* Successfully achieved all features for the application
 
+#### Challenges
+* Learning and implementing new technologies through self-study
+* Working around 3 different time zones 
 
 ## Roadmap
 Future features could include:
-* idea1
-* idea2
-* idea3
+* Search/Filter functionality
+* Add a new movie
+* Update a current movie's details
 
 
 ## Setup
 1. Fork this Repo
 2. Clone it down to your machine
 3. `cd` into the root of the project directory
-4. Run `node index.js` in your terminal
+4. Run `npm install`
+5. Run `npm start` in your terminal
 
 
 ## Contributors
@@ -89,11 +86,10 @@ Neil Linton
 * [LinkedIn](https://www.linkedin.com/in/neil-b-linton/)
 * [GitHub](https://github.com/LINTONBNEIL)
 
+
 ## Sources
-* []()
-* []()
-* []()
-* []()
-* []()
-* Mentors - [Matt Roden](https://github.com/Matt-Roden)
-* Our peers in Cohort 2203
+* [Heroku cloud PaaS](https://heroku.com/)
+* [Router docs](https://reactrouter.com/)
+* [Cypress docs](https://docs.cypress.io/guides/overview/why-cypress)
+* [Medium](https://medium.com/)
+* Our peers in Turing Cohort 2203
