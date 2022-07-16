@@ -1,72 +1,99 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-UPDATE README
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Learning Goals](#learning-goals)
+- [Technologies and Tools](#technologies-and-tools)
+- [Deployed Page](#deployed-page)
+- [Project Reflections](#project-reflections)
+- [Roadmap](#roadmap)
+- [Setup](#setup)
+- [Contributors](#contributors)
+- [Sources](#sources)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Overview
+[TYPE HERE]
 
-In the project directory, you can run:
+[VISUALS GO HERE]
+![](name-of-giphy.gif)
 
-### `npm start`
+The [Turing School of Software and Design](https://turing.edu/) provided a project spec sheet for students to follow, which can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Learning Goals
+* Gain competency with React fundamentals
+* Learn how to test React components & asynchronous JS
+* Practice refactoring
+* Create a multi-page UX using Router
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies and Tools
+[delete all that don't apply/add new]
+* JavaScript
+* React
+* React Router
+* RESTful API
+* HTML
+* CSS
+* Cypress Testing
+* Mocha/Chai Testing
+* npm
+* Node.js
+* Express
+* Webpack
+* Atom 
+* VS Code
+* Agile
+* Git
+* GitHub
+* GitHub Issues
+* GitHub Projects
+* MacOS Terminal
+* Google Chrome Dev-Tools
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployed Page
+You can access this project through the deployed page [here]().
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Reflections
+#### Wins
+#### Challenges
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Roadmap
+Future features could include:
+* idea1
+* idea2
+* idea3
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setup
+1. Fork this Repo
+2. Clone it down to your machine
+3. `cd` into the root of the project directory
+4. Run `node index.js` in your terminal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Contributors
+Amber Bodnar
+* [LinkedIn](https://www.linkedin.com/in/amberbodnar/)
+* [GitHub](https://github.com/abodnar1)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Grant Beard
+* [LinkedIn](https://www.linkedin.com/in/grant-x-beard-a287bb232/)
+* [GitHub](https://github.com/GrantXBeard)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Neil Linton
+* [LinkedIn](https://www.linkedin.com/in/neil-b-linton/)
+* [GitHub](https://github.com/LINTONBNEIL)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Sources
+* []()
+* []()
+* []()
+* []()
+* []()
+* Mentors - [Matt Roden](https://github.com/Matt-Roden)
+* Our peers in Cohort 2203
