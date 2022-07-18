@@ -1,4 +1,9 @@
 ul {
-  color: white;
+  font-family: "Vibur";
   list-style: none;
+  color: white;
+}
+
+a {
+  color: white;
 }
