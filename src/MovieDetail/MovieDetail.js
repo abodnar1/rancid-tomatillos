@@ -60,10 +60,10 @@ class MovieDetail extends Component {
               <p className="overview">{this.state.movieToDisplay.overview}</p>
             </div>
             <div className="copy">
-              <p className="genres">Genres: {this.state.movieToDisplay.genres.join(', ')}</p>
-              <p className="average-rating">Average rating: {this.state.movieToDisplay.average_rating.toFixed(1)}/10</p>
-              <p className="release-date">Release Date: {this.state.movieToDisplay.release_date}</p>
-              <p className="runtime">Runtime: {this.state.movieToDisplay.runtime} min</p>
+              <p className="genres"><b>Genres:</b> {this.state.movieToDisplay.genres.join(', ')}</p>
+              <p className="average-rating"><b>Average rating:</b> {this.state.movieToDisplay.average_rating.toFixed(1)}/10</p>
+              <p className="release-date"><b>Release Date:</b> {this.state.movieToDisplay.release_date}</p>
+              <p className="runtime"><b>Runtime:</b> {this.state.movieToDisplay.runtime} min</p>
             </div>
           </div>
         </div>
