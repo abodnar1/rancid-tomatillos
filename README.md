@@ -4,7 +4,6 @@
 - [Project Overview](#project-overview)
 - [Learning Goals](#learning-goals)
 - [Technologies and Tools](#technologies-and-tools)
-- [Deployed Page](#deployed-page)
 - [Project Reflections](#project-reflections)
 - [Roadmap](#roadmap)
 - [Setup](#setup)
@@ -15,8 +14,7 @@
 ## Project Overview
 This application allows a user to view a movie library, click on an individual movie poster to see details of that movie, and watch a trailer. Goal was to implement React framework and utilizing React Router along with End-to-End testing using Cypress.
 
-[VISUALS GO HERE]
-![](name-of-giphy.gif)
+[rancid movie](https://user-images.githubusercontent.com/99693359/179561460-14a9b294-9738-4afd-a663-bfa4415812c4.mp4)
 
 The [Turing School of Software and Design](https://turing.edu/) provided a project spec sheet for students to follow, which can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html).
 
@@ -41,10 +39,6 @@ The [Turing School of Software and Design](https://turing.edu/) provided a proje
 * ReactPlayer
 * GitHub Issues
 * GitHub Projects
-
-
-## Deployed Page
-You can access this project through the deployed page [here]().
 
 
 ## Project Reflections
