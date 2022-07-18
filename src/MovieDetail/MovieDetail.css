@@ -11,6 +11,9 @@
   justify-content: space-between;
   background-color: #526340;
   width: 800px;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
 }
 
 h2 {
@@ -30,6 +33,11 @@ h2 {
   width: 800px;
 }
 
+.video-player {
+  border-left: solid;
+  border-right: solid;
+}
+
 .copy-wrapper {
   margin: -50;
   display: flex;
@@ -38,6 +46,9 @@ h2 {
   height: auto;
   width: 800px;
   background-color: #526340;
+  border-bottom: solid;
+  border-left: solid;
+  border-right: solid;
 }
 
 .copy {
