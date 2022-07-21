@@ -14,7 +14,7 @@ describe("Rancid Tomatillos", () => {
     cy.get(".movie-poster").should("have.length", 40)
   })
 
-  it("The should be able to click on a movie card and be directed to a new URL, () => {
+  it("The should be able to click on a movie card and be directed to a new URL", () => {
     cy.get(".movie-poster").first().click()
     cy.url().should("eq", "http://localhost:3000/694919")
   })
