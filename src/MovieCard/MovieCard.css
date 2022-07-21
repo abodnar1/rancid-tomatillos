@@ -6,8 +6,8 @@
 
 .movie-poster:hover{
   transform: scale(1.1);
-  border: 2px solid #fff;
   color: #90EE90;
+  box-sizing: border-box;
   box-shadow:
   0 -40px 100px,
   0 0 2px,
